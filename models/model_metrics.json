@@ -1,0 +1,181 @@
+{
+  "best_model_name": "Decision Tree",
+  "all_model_metrics": {
+    "Logistic Regression": {
+      "accuracy": 0.6363636363636364,
+      "precision": 0.6415094339622641,
+      "recall": 0.4788732394366197,
+      "f1_score": 0.5483870967741935,
+      "classification_report": {
+        "0": {
+          "precision": 0.6336633663366337,
+          "recall": 0.7710843373493976,
+          "f1-score": 0.6956521739130435,
+          "support": 83.0
+        },
+        "1": {
+          "precision": 0.6415094339622641,
+          "recall": 0.4788732394366197,
+          "f1-score": 0.5483870967741935,
+          "support": 71.0
+        },
+        "accuracy": 0.6363636363636364,
+        "macro avg": {
+          "precision": 0.6375864001494489,
+          "recall": 0.6249787883930087,
+          "f1-score": 0.6220196353436185,
+          "support": 154.0
+        },
+        "weighted avg": {
+          "precision": 0.6372807092029958,
+          "recall": 0.6363636363636364,
+          "f1-score": 0.6277572357516256,
+          "support": 154.0
+        }
+      }
+    },
+    "Decision Tree": {
+      "accuracy": 0.6038961038961039,
+      "precision": 0.5735294117647058,
+      "recall": 0.5492957746478874,
+      "f1_score": 0.5611510791366906,
+      "classification_report": {
+        "0": {
+          "precision": 0.627906976744186,
+          "recall": 0.6506024096385542,
+          "f1-score": 0.6390532544378699,
+          "support": 83.0
+        },
+        "1": {
+          "precision": 0.5735294117647058,
+          "recall": 0.5492957746478874,
+          "f1-score": 0.5611510791366906,
+          "support": 71.0
+        },
+        "accuracy": 0.6038961038961039,
+        "macro avg": {
+          "precision": 0.600718194254446,
+          "recall": 0.5999490921432208,
+          "f1-score": 0.6001021667872802,
+          "support": 154.0
+        },
+        "weighted avg": {
+          "precision": 0.6028368006822179,
+          "recall": 0.6038961038961039,
+          "f1-score": 0.6031373164743392,
+          "support": 154.0
+        }
+      }
+    },
+    "Random Forest": {
+      "accuracy": 0.6038961038961039,
+      "precision": 0.5892857142857143,
+      "recall": 0.4647887323943662,
+      "f1_score": 0.5196850393700787,
+      "classification_report": {
+        "0": {
+          "precision": 0.6122448979591837,
+          "recall": 0.7228915662650602,
+          "f1-score": 0.6629834254143646,
+          "support": 83.0
+        },
+        "1": {
+          "precision": 0.5892857142857143,
+          "recall": 0.4647887323943662,
+          "f1-score": 0.5196850393700787,
+          "support": 71.0
+        },
+        "accuracy": 0.6038961038961039,
+        "macro avg": {
+          "precision": 0.6007653061224489,
+          "recall": 0.5938401493297132,
+          "f1-score": 0.5913342323922217,
+          "support": 154.0
+        },
+        "weighted avg": {
+          "precision": 0.6016598197720646,
+          "recall": 0.6038961038961039,
+          "f1-score": 0.596917286393947,
+          "support": 154.0
+        }
+      }
+    },
+    "Support Vector Machine": {
+      "accuracy": 0.577922077922078,
+      "precision": 0.5555555555555556,
+      "recall": 0.4225352112676056,
+      "f1_score": 0.48,
+      "classification_report": {
+        "0": {
+          "precision": 0.59,
+          "recall": 0.7108433734939759,
+          "f1-score": 0.644808743169399,
+          "support": 83.0
+        },
+        "1": {
+          "precision": 0.5555555555555556,
+          "recall": 0.4225352112676056,
+          "f1-score": 0.48,
+          "support": 71.0
+        },
+        "accuracy": 0.577922077922078,
+        "macro avg": {
+          "precision": 0.5727777777777778,
+          "recall": 0.5666892923807907,
+          "f1-score": 0.5624043715846995,
+          "support": 154.0
+        },
+        "weighted avg": {
+          "precision": 0.5741197691197691,
+          "recall": 0.577922077922078,
+          "f1-score": 0.5688254914484423,
+          "support": 154.0
+        }
+      }
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "Glucose",
+      "importance": 0.3813053531992805
+    },
+    {
+      "feature": "BloodPressure",
+      "importance": 0.16315318573005375
+    },
+    {
+      "feature": "Insulin",
+      "importance": 0.14122442046520248
+    },
+    {
+      "feature": "Pregnancies",
+      "importance": 0.11005396754658547
+    },
+    {
+      "feature": "BMI",
+      "importance": 0.0661431497752234
+    },
+    {
+      "feature": "Age",
+      "importance": 0.06566468995349915
+    },
+    {
+      "feature": "SkinThickness",
+      "importance": 0.03921192418037703
+    },
+    {
+      "feature": "DiabetesPedigreeFunction",
+      "importance": 0.03324330914977819
+    }
+  ],
+  "plots": {
+    "correlation_heatmap": "C:\\Users\\hp\\Downloads\\diabetes-predictor\\models\\plots\\correlation_heatmap.png",
+    "feature_distributions": "C:\\Users\\hp\\Downloads\\diabetes-predictor\\models\\plots\\feature_distributions.png",
+    "feature_importance": "C:\\Users\\hp\\Downloads\\diabetes-predictor\\models\\plots\\feature_importance.png",
+    "confusion_matrix": "C:\\Users\\hp\\Downloads\\diabetes-predictor\\models\\plots\\confusion_matrix.png"
+  },
+  "test_shape": {
+    "rows": 154,
+    "columns": 8
+  }
+}
