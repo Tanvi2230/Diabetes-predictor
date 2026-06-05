@@ -7,6 +7,8 @@
 
 **Try it live:** [https://diabetes-predictor-tumtwcikhbk7q6l9cwtgxs.streamlit.app/](https://diabetes-predictor-tumtwcikhbk7q6l9cwtgxs.streamlit.app/)
 
+**GitHub:** [https://github.com/Tanvi2230/Smart-Diabetes-predictor](https://github.com/Tanvi2230/Smart-Diabetes-predictor)
+
 > **Disclaimer:** This tool is intended for educational and screening support purposes only. It is not a substitute for professional medical diagnosis or clinical advice.
 
 ---
