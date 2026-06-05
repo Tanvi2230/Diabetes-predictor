@@ -1,6 +1,17 @@
 # Smart Diabetes Predictor
 
-Smart Diabetes Predictor is an end-to-end machine learning project that predicts whether a patient is likely to be diabetic based on eight medical indicators. It compares multiple supervised learning algorithms, automatically chooses the best model, saves the trained bundle, and exposes a polished Streamlit interface for single and bulk predictions.
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.44.1-FF4B4B?logo=streamlit)](https://streamlit.io/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.6.1-F7931E?logo=scikit-learn)](https://scikit-learn.org/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20App-brightgreen?logo=streamlit)](https://diabetes-predictor-tumtwcikhbk7q6l9cwtgxs.streamlit.app/)
+
+**Try it live:** [https://diabetes-predictor-tumtwcikhbk7q6l9cwtgxs.streamlit.app/](https://diabetes-predictor-tumtwcikhbk7q6l9cwtgxs.streamlit.app/)
+
+> **Disclaimer:** This tool is intended for educational and screening support purposes only. It is not a substitute for professional medical diagnosis or clinical advice.
+
+---
+
+Smart Diabetes Predictor is an end-to-end machine learning project that predicts whether a patient is likely to be diabetic based on eight medical indicators. It compares multiple supervised learning algorithms, automatically selects the best model, and exposes a polished Streamlit interface for single and bulk predictions.
 
 ## Features
 
@@ -11,6 +22,7 @@ Smart Diabetes Predictor is an end-to-end machine learning project that predicts
 - Visual analytics: correlation heatmap, feature importance, distributions, confusion matrix
 - Local prediction history logging
 - Bulk CSV prediction through the UI
+- Fully responsive — works on desktop and mobile
 
 ## Project Structure
 
@@ -20,7 +32,9 @@ diabetes-predictor/
 ├── data/
 │   └── diabetes.csv
 ├── models/
-│   └── model.pkl
+│   ├── model.pkl
+│   ├── model_metrics.json
+│   └── plots/
 ├── notebooks/
 │   └── exploration.ipynb
 ├── src/
@@ -64,18 +78,21 @@ streamlit run app/app.py
 
 ## Input Parameters
 
-- Pregnancies
-- Glucose
-- BloodPressure
-- SkinThickness
-- Insulin
-- BMI
-- DiabetesPedigreeFunction
-- Age
+| Parameter | Description | Range |
+|---|---|---|
+| Pregnancies | Number of pregnancies | 0 – 20 |
+| Glucose | Plasma glucose concentration (mg/dL) | 0 – 250 |
+| BloodPressure | Diastolic blood pressure (mm Hg) | 0 – 140 |
+| SkinThickness | Triceps skin fold thickness (mm) | 0 – 100 |
+| Insulin | 2-hour serum insulin (mu U/ml) | 0 – 900 |
+| BMI | Body mass index (kg/m²) | 0 – 70 |
+| DiabetesPedigreeFunction | Diabetes pedigree function score | 0.05 – 3.0 |
+| Age | Age in years | 10 – 100 |
 
-## Example Input
+## Example
 
-```text
+**Input:**
+```
 Pregnancies: 4
 Glucose: 148
 BloodPressure: 72
@@ -86,34 +103,23 @@ DiabetesPedigreeFunction: 0.627
 Age: 50
 ```
 
-## Example Output
-
-```text
+**Output:**
+```
 Prediction: Diabetic
 Probability score: 78.00%
 Risk level: High
-Explanation: Top influencing factors: Glucose (higher risk, impact 0.682), BMI (higher risk, impact 0.311), Age (higher risk, impact 0.248).
+Explanation: Top influencing factors: Glucose (higher risk, impact 0.682),
+             BMI (higher risk, impact 0.311), Age (higher risk, impact 0.248).
 ```
 
-## Notes
-
-- The bundled dataset is offline-friendly and uses the same medical fields as the Pima-style diabetes schema.
-- This project is intended for educational screening support and not as a substitute for professional medical diagnosis.
-- If your machine has a mixed Python setup, the included `setup_windows.ps1` clears `PYTHONPATH`, uses a local `.venv`, installs requirements, and trains the initial model bundle.
-
-## Deploy To Streamlit Cloud
+## Deploy to Streamlit Cloud
 
 1. Push this folder to a GitHub repository.
 2. Open [Streamlit Community Cloud](https://share.streamlit.io/).
 3. Choose your GitHub repo.
 4. Set the main file path to `app/app.py`.
-5. Click Deploy.
+5. Click **Deploy**.
 
-If Streamlit asks for dependencies, it will automatically use `requirements.txt`.
-The project also includes `runtime.txt` to pin a compatible Python version for deployment.
+Streamlit Cloud will automatically use `requirements.txt` for dependencies and `runtime.txt` to pin the Python version.
 
-Recommended before pushing:
-
-- Keep `models/model.pkl` and `models/model_metrics.json` in the repo
-- Do not upload `.venv`, `.tmp`, `.matplotlib_cache`, or `__pycache__`
-- Use the included `.gitignore`
+Before pushing, keep `models/model.pkl` and `models/model_metrics.json` in the repo so the app loads instantly without retraining.
